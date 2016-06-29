@@ -158,6 +158,15 @@
     }
 }
 
+- (NSString *)checkCurrenWifi {
+    CaptiveNetwork *captiveNetwork = [CaptiveNetwork new];
+    NSDictionary *dict = [captiveNetwork fetchSSIDInfo];
+    if (VALID(dict, NSDictionary) && VALID([dict objectForKey:@"SSID"], NSString)) {
+        return [dict objectForKey:@"SSID"];
+    }
+    return @"";
+}
+
 - (void)setupProduct:(NSDictionary *)dictProduct onSuccess:(MayaSuccess)loadBlock {
     __block NSString *ipGateway = [AutonomousUtil getGatewayIP];
     AUTONOMOUS_RUN_ON_HIGH_QUEUE((^{
