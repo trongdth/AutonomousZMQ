@@ -24,7 +24,7 @@ typedef void(^MayaError)(NSError *err);
 #pragma mark - Functions
 
 - (void)removeKey:(NSString *)key;
-- (NSString *)checkCurrenWifi;
+- (NSString *)myCurrentWifi;
 - (void)setupProduct:(NSDictionary *)dictProduct onSuccess:(MayaSuccess)loadBlock;
 - (void)send:(NSDictionary *)dictParams onSuccess:(MayaSuccess)loadBlock;
 - (void)removeAll;

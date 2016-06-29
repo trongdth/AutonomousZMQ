@@ -158,7 +158,7 @@
     }
 }
 
-- (NSString *)checkCurrenWifi {
+- (NSString *)myCurrentWifi {
     CaptiveNetwork *captiveNetwork = [CaptiveNetwork new];
     NSDictionary *dict = [captiveNetwork fetchSSIDInfo];
     if (VALID(dict, NSDictionary) && VALID([dict objectForKey:@"SSID"], NSString)) {
@@ -181,7 +181,7 @@
                 return;
             } else {
                 NSLog(@"Bind to endpoint %@ successfully", local_hostpot);
-            }//fu
+            }
             
             NSTimeZone *timeZone = [NSTimeZone localTimeZone];
             NSString *tzName = [timeZone name];
