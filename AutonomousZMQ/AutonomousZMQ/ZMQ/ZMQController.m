@@ -66,16 +66,11 @@
     if (self = [super init]) {
         _arrCallbacks = [NSMutableArray new];
         ctx = [[ZMQContext alloc] initWithIOThreads:15U];
-        [self startReceiveData];
     }
     return self;
 }
 
 - (void)startReceiveData {
-    [self beginReceiveData];
-}
-
-- (void)beginReceiveData {
     AUTONOMOUS_RUN_ON_HIGH_QUEUE((^{
         @try {
             ZMQSocket *subscriber = [ctx socketWithType:ZMQ_SUB];
@@ -116,7 +111,7 @@
         }
         @finally {
             NSLog(@"Try to get data again!!!");
-            [self beginReceiveData];
+            [self startReceiveData];
         }
     }));
 
@@ -165,6 +160,10 @@
         return [dict objectForKey:@"SSID"];
     }
     return @"";
+}
+
+- (void)closeSockets {
+    [ctx closeSockets];
 }
 
 - (void)setupProduct:(NSDictionary *)dictProduct onSuccess:(MayaSuccess)loadBlock {

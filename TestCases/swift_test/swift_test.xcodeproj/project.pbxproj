@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B110B38E1D229FF10085CA82 /* AutonomousZMQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B110B38D1D229FF10085CA82 /* AutonomousZMQ.framework */; };
 		B14BFCA71D2382E900555CAC /* libzmq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B14BFCA61D2382E900555CAC /* libzmq.a */; };
-		B14BFCA91D2383C400555CAC /* AutonomousZMQ.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B110B38D1D229FF10085CA82 /* AutonomousZMQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B17BBF311D1415AF00311269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BBF301D1415AF00311269 /* AppDelegate.swift */; };
 		B17BBF331D1415AF00311269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BBF321D1415AF00311269 /* ViewController.swift */; };
 		B17BBF361D1415AF00311269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17BBF341D1415AF00311269 /* Main.storyboard */; };
 		B17BBF381D1415AF00311269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B17BBF371D1415AF00311269 /* Assets.xcassets */; };
 		B17BBF3B1D1415AF00311269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B17BBF391D1415AF00311269 /* LaunchScreen.storyboard */; };
+		B1A9B1041D2E35C600DB8DD1 /* AutonomousZMQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1A9B1021D2E35B800DB8DD1 /* AutonomousZMQ.framework */; };
+		B1A9B1051D2E35C600DB8DD1 /* AutonomousZMQ.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1A9B1021D2E35B800DB8DD1 /* AutonomousZMQ.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B14BFCA91D2383C400555CAC /* AutonomousZMQ.framework in Embed Frameworks */,
+				B1A9B1051D2E35C600DB8DD1 /* AutonomousZMQ.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,7 +32,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B110B38D1D229FF10085CA82 /* AutonomousZMQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AutonomousZMQ.framework; sourceTree = "<group>"; };
 		B14BFCA61D2382E900555CAC /* libzmq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzmq.a; sourceTree = "<group>"; };
 		B17BBF2D1D1415AF00311269 /* swift_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17BBF301D1415AF00311269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +40,7 @@
 		B17BBF371D1415AF00311269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B17BBF3A1D1415AF00311269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B17BBF3C1D1415AF00311269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1A9B1021D2E35B800DB8DD1 /* AutonomousZMQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AutonomousZMQ.framework; sourceTree = "<group>"; };
 		B1E1E6661D22621A003E4D00 /* swift_test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "swift_test-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,7 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B14BFCA71D2382E900555CAC /* libzmq.a in Frameworks */,
-				B110B38E1D229FF10085CA82 /* AutonomousZMQ.framework in Frameworks */,
+				B1A9B1041D2E35C600DB8DD1 /* AutonomousZMQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +93,7 @@
 		B17BBF241D1415AF00311269 = {
 			isa = PBXGroup;
 			children = (
+				B1A9B1011D2E35B800DB8DD1 /* Frameworks */,
 				B14BFCA21D2382E900555CAC /* objc-zmq */,
 				B17BBF2F1D1415AF00311269 /* swift_test */,
 				B17BBF2E1D1415AF00311269 /* Products */,
@@ -110,7 +111,6 @@
 		B17BBF2F1D1415AF00311269 /* swift_test */ = {
 			isa = PBXGroup;
 			children = (
-				B110B38D1D229FF10085CA82 /* AutonomousZMQ.framework */,
 				B17BBF301D1415AF00311269 /* AppDelegate.swift */,
 				B17BBF321D1415AF00311269 /* ViewController.swift */,
 				B17BBF341D1415AF00311269 /* Main.storyboard */,
@@ -120,6 +120,15 @@
 				B1E1E6661D22621A003E4D00 /* swift_test-Bridging-Header.h */,
 			);
 			path = swift_test;
+			sourceTree = "<group>";
+		};
+		B1A9B1011D2E35B800DB8DD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1A9B1021D2E35B800DB8DD1 /* AutonomousZMQ.framework */,
+			);
+			name = Frameworks;
+			path = swift_test/Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,6 +142,7 @@
 				B17BBF2A1D1415AF00311269 /* Frameworks */,
 				B17BBF2B1D1415AF00311269 /* Resources */,
 				B14BFCAA1D2383C500555CAC /* Embed Frameworks */,
+				B1A9B1001D2E352E00DB8DD1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -188,6 +198,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1A9B1001D2E352E00DB8DD1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n    # This script loops through the frameworks embedded in the application and\n    # removes unused architectures.\n    find \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\n    do\n    FRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\n    FRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\n    echo \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\n    EXTRACTED_ARCHS=()\n\n    for ARCH in $ARCHS\n    do\n    echo \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\n    lipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\n    EXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\n    done\n\n    echo \"Merging extracted architectures: ${ARCHS}\"\n    lipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\n    rm \"${EXTRACTED_ARCHS[@]}\"\n\n    echo \"Replacing original executable with thinned version\"\n    rm \"$FRAMEWORK_EXECUTABLE_PATH\"\n    mv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\n    done\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B17BBF291D1415AF00311269 /* Sources */ = {
@@ -290,7 +316,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Autonomous Inc. (54DJVWMJCC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Autonomous Inc. (54DJVWMJCC)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
@@ -307,6 +334,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-lstdc++";
+				PROVISIONING_PROFILE = "0aa2a2a6-0103-4eb7-858d-1a99d756cd42";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -324,6 +352,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/swift_test",
+					"$(PROJECT_DIR)/swift_test/Frameworks",
 				);
 				INFOPLIST_FILE = swift_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -334,10 +363,11 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chemarome.swift-test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonomous.smartwall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift_test/swift_test-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Debug;
@@ -348,10 +378,12 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Autonomous Inc. (54DJVWMJCC)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/swift_test",
+					"$(PROJECT_DIR)/swift_test/Frameworks",
 				);
 				INFOPLIST_FILE = swift_test/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -361,9 +393,11 @@
 					"$(PROJECT_DIR)/swift_test/objc-zmq/Library/zeromq-4.2.0/static",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chemarome.swift-test";
+				PRODUCT_BUNDLE_IDENTIFIER = com.autonomous.smartwall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0aa2a2a6-0103-4eb7-858d-1a99d756cd42";
 				SWIFT_OBJC_BRIDGING_HEADER = "swift_test/swift_test-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Release;

@@ -1,1 +1,0 @@
-int getdefaultgateway(in_addr_t * addr);

@@ -1,6 +1,0 @@
-framework module AutonomousZMQ {
-  umbrella header "AutonomousZMQ.h"
-
-  export *
-  module * { export * }
-}
