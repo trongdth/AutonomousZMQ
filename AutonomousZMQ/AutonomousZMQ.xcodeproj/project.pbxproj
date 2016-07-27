@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		B10384E51D1EFDC400D07D43 /* AutonomousZMQ.h in Headers */ = {isa = PBXBuildFile; fileRef = B10384E41D1EFDC400D07D43 /* AutonomousZMQ.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B10385121D1F067A00D07D43 /* ZmqChannel.h in Headers */ = {isa = PBXBuildFile; fileRef = B103850F1D1F067A00D07D43 /* ZmqChannel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B10385131D1F067A00D07D43 /* ZMQHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = B10385101D1F067A00D07D43 /* ZMQHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B10385141D1F067A00D07D43 /* ZMQHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B10385111D1F067A00D07D43 /* ZMQHelper.m */; };
 		B10385221D1F0CBE00D07D43 /* ZMQController.h in Headers */ = {isa = PBXBuildFile; fileRef = B10385201D1F0CBD00D07D43 /* ZMQController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,7 +52,6 @@
 		B10384E11D1EFDC400D07D43 /* AutonomousZMQ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AutonomousZMQ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10384E41D1EFDC400D07D43 /* AutonomousZMQ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutonomousZMQ.h; sourceTree = "<group>"; };
 		B10384E61D1EFDC400D07D43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B103850F1D1F067A00D07D43 /* ZmqChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZmqChannel.h; sourceTree = "<group>"; };
 		B10385101D1F067A00D07D43 /* ZMQHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMQHelper.h; sourceTree = "<group>"; };
 		B10385111D1F067A00D07D43 /* ZMQHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZMQHelper.m; sourceTree = "<group>"; };
 		B10385201D1F0CBD00D07D43 /* ZMQController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZMQController.h; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 				B17B395B1D21887E005F0020 /* objc-zmq */,
 				B17B39821D218A75005F0020 /* Utilities */,
 				B103851F1D1F0CBD00D07D43 /* ZMQ */,
-				B103850F1D1F067A00D07D43 /* ZmqChannel.h */,
 				B10385101D1F067A00D07D43 /* ZMQHelper.h */,
 				B10385111D1F067A00D07D43 /* ZMQHelper.m */,
 				B10384E41D1EFDC400D07D43 /* AutonomousZMQ.h */,
@@ -237,21 +234,20 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10384E51D1EFDC400D07D43 /* AutonomousZMQ.h in Headers */,
+				B1E1E65B1D2243FA003E4D00 /* AutonomousUtil.h in Headers */,
+				B17B39851D218A75005F0020 /* CaptiveNetwork.h in Headers */,
+				B1E1E6621D22445D003E4D00 /* getgateway.h in Headers */,
+				B1E1E6631D22445D003E4D00 /* route.h in Headers */,
 				B10385221D1F0CBE00D07D43 /* ZMQController.h in Headers */,
 				B10385131D1F067A00D07D43 /* ZMQHelper.h in Headers */,
 				B17B39781D21887E005F0020 /* ZMQSocket.h in Headers */,
 				B17B39751D21887E005F0020 /* ZMQException.h in Headers */,
-				B17B39851D218A75005F0020 /* CaptiveNetwork.h in Headers */,
 				B17B39771D21887E005F0020 /* ZMQObjC.h in Headers */,
 				B17B39731D21887E005F0020 /* ZMQContext.h in Headers */,
-				B1E1E6621D22445D003E4D00 /* getgateway.h in Headers */,
-				B1E1E65B1D2243FA003E4D00 /* AutonomousUtil.h in Headers */,
 				B17B397A1D21887E005F0020 /* zmq.h in Headers */,
 				B17B39721D21887E005F0020 /* zmq.hpp in Headers */,
 				B17B397B1D21887E005F0020 /* zmq_utils.h in Headers */,
-				B1E1E6631D22445D003E4D00 /* route.h in Headers */,
-				B10385121D1F067A00D07D43 /* ZmqChannel.h in Headers */,
-				B10384E51D1EFDC400D07D43 /* AutonomousZMQ.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

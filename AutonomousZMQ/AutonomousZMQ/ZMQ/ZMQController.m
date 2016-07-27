@@ -42,6 +42,12 @@
 #define OBJECT_AT_INDEX(__OBJECT, __INDEX) ((ARRAY_INDEX_EXISTS(__OBJECT, __INDEX)) ? [__OBJECT objectAtIndex:__INDEX] : nil)
 #endif
 
+@interface ZMQController()
+
+@property (nonatomic, strong) NSDictionary *dictOptions;
+
+@end
+
 @implementation ZMQController
 
 + (ZMQController *)sharedInstance
@@ -66,16 +72,29 @@
     if (self = [super init]) {
         _arrCallbacks = [NSMutableArray new];
         ctx = [[ZMQContext alloc] initWithIOThreads:15U];
+        [self loadRequirements];
     }
     return self;
 }
+
+#pragma mark - Private
+
+- (void)loadRequirements {
+    self.dictOptions = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"autonomous_config" ofType:@"plist"]];
+    if (!VALID(self.dictOptions, NSDictionary)) {
+        @throw [NSException exceptionWithName:@"ERROR" reason:@"Autonomous need 'autonomous_config.plist' file!" userInfo:nil];
+    }
+    NSLog(@"Loaded 'autonomous_config.plist' file");
+}
+
+#pragma mark - Public
 
 - (void)startReceiveData {
     AUTONOMOUS_RUN_ON_HIGH_QUEUE((^{
         @try {
             ZMQSocket *subscriber = [ctx socketWithType:ZMQ_SUB];
             
-            NSString *ip = [NSString stringWithFormat:@"tcp://%@:%d", kServerIP, kPORT_SUB];
+            NSString *ip = [NSString stringWithFormat:@"tcp://%@:%d", [self.dictOptions objectForKey:@"SERVER_IP"], [[self.dictOptions objectForKey:@"SERVER_PORT"] intValue]];
             BOOL isBind = [subscriber connectToEndpoint:ip];
             
             if (!isBind) {
@@ -166,13 +185,13 @@
     [ctx closeSockets];
 }
 
-- (void)setupProduct:(NSDictionary *)dictProduct onSuccess:(MayaSuccess)loadBlock {
+- (void)sendLocalData:(NSString *)str onSuccess:(MayaSuccess)loadBlock {
     __block NSString *ipGateway = [AutonomousUtil getGatewayIP];
     AUTONOMOUS_RUN_ON_HIGH_QUEUE((^{
         @try {
             ZMQSocket *sender = [ctx socketWithType:ZMQ_REQ];
             
-            NSString *local_hostpot = [NSString stringWithFormat:@"tcp://%@:%d", ipGateway, kPORT_HOTSPOT];
+            NSString *local_hostpot = [NSString stringWithFormat:@"tcp://%@:%d", ipGateway, [[self.dictOptions objectForKey:@"HOTSPOT_PORT"] intValue]];
             BOOL isBind = [sender connectToEndpoint:local_hostpot];
             
             if (!isBind) {
@@ -182,27 +201,8 @@
                 NSLog(@"Bind to endpoint %@ successfully", local_hostpot);
             }
             
-            NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-            NSString *tzName = [timeZone name];
-            
-            NSString *text = [NSString stringWithFormat:@"{ \
-                                                            \"action\": \"%@\", \
-                                                            \"ssid\": \"%@\", \
-                                                            \"wpa\": \"%@\", \
-                                                            \"product_id\": \"%@\", \
-                                                            \"user_id\": \"%@\", \
-                                                            \"user_hash\": \"%@\", \
-                                                            \"time_zone\": \"%@\" \
-                                                        }", (VALID([dictProduct objectForKey:@"action"], NSString))?[dictProduct objectForKey:@"action"]:@"",
-                                                            (VALID([dictProduct objectForKey:@"ssid"], NSString))?[dictProduct objectForKey:@"ssid"]:@"",
-                                                            (VALID([dictProduct objectForKey:@"wpa"], NSString))?[dictProduct objectForKey:@"wpa"]:@"",
-                                                            (VALID([dictProduct objectForKey:@"product_id"], NSString))?[dictProduct objectForKey:@"product_id"]:@"",
-                                                            (VALID([dictProduct objectForKey:@"user_id"], NSString))?[dictProduct objectForKey:@"user_id"]:@"",
-                                                            (VALID([dictProduct objectForKey:@"user_hash"], NSString))?[dictProduct objectForKey:@"user_hash"]:@"",
-                                                            tzName];
-            
-            NSLog(@"Send wifi configuration... %@", text);
-            NSData *textData = [text dataUsingEncoding:NSUTF8StringEncoding];
+            NSLog(@"Sending: %@", str);
+            NSData *textData = [str dataUsingEncoding:NSUTF8StringEncoding];
             [sender sendData:textData withFlags:0];
             
             NSData *reply = [sender receiveDataWithFlags:0];
@@ -212,7 +212,7 @@
                              options:NSJSONReadingAllowFragments
                              error:&error];
             
-            NSLog(@"Receiving wifi configuration... %@", JSONObject);
+            NSLog(@"Receiving data... %@", JSONObject);
             if (loadBlock) {
                 loadBlock(JSONObject);
             }
@@ -220,44 +220,6 @@
         }
         @catch (NSException *exception) {
 
-        }
-        @finally {
-            
-        }
-    }));
-}
-
-- (void)send:(NSDictionary *)dictParams onSuccess:(MayaSuccess)loadBlock {
-    __block NSString *ipGateway = [AutonomousUtil getGatewayIP];
-    AUTONOMOUS_RUN_ON_HIGH_QUEUE((^{
-        @try {
-            
-            NSLog(@"Sending...");
-            ZMQSocket *sender = [ctx socketWithType:ZMQ_REQ];
-            
-            NSString *ip = [NSString stringWithFormat:@"tcp://%@:%d", ipGateway, kPORT_HOTSPOT];
-            BOOL isBind = [sender connectToEndpoint:ip];
-            
-            if (!isBind) {
-                NSLog(@"*** Failed to bind to endpoint [%@].", ip);
-                return;
-            }
-            
-            NSString *text = [NSString stringWithFormat:@"{ \
-                              \"action\": \"%@\", \
-                              \"value\": \"%@\" \
-                              }", (VALID([dictParams objectForKey:@"action"], NSString))?[dictParams objectForKey:@"action"]:@"", (VALID([dictParams objectForKey:@"value"], NSString))?[dictParams objectForKey:@"value"]:@""];
-            
-            NSLog(@"Sending %@ -- data: %@", [dictParams objectForKey:@"action"], [dictParams objectForKey:@"value"]);
-            NSData *textData = [text dataUsingEncoding:NSUTF8StringEncoding];
-            [sender sendData:textData withFlags:0];
-            
-            [self addKey:[dictParams objectForKey:@"action"] block:loadBlock];
-            
-            [sender close];
-        }
-        @catch (NSException *exception) {
-            
         }
         @finally {
             
