@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B112FCD61D656E2A00B75C80 /* autonomous_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = B112FCD51D656E2A00B75C80 /* autonomous_config.plist */; };
 		B14BFCA71D2382E900555CAC /* libzmq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B14BFCA61D2382E900555CAC /* libzmq.a */; };
 		B17BBF311D1415AF00311269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BBF301D1415AF00311269 /* AppDelegate.swift */; };
 		B17BBF331D1415AF00311269 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17BBF321D1415AF00311269 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B112FCD51D656E2A00B75C80 /* autonomous_config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autonomous_config.plist; sourceTree = "<group>"; };
 		B14BFCA61D2382E900555CAC /* libzmq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libzmq.a; sourceTree = "<group>"; };
 		B17BBF2D1D1415AF00311269 /* swift_test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17BBF301D1415AF00311269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		B17BBF2F1D1415AF00311269 /* swift_test */ = {
 			isa = PBXGroup;
 			children = (
+				B112FCD51D656E2A00B75C80 /* autonomous_config.plist */,
 				B17BBF301D1415AF00311269 /* AppDelegate.swift */,
 				B17BBF321D1415AF00311269 /* ViewController.swift */,
 				B17BBF341D1415AF00311269 /* Main.storyboard */,
@@ -191,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B112FCD61D656E2A00B75C80 /* autonomous_config.plist in Resources */,
 				B17BBF3B1D1415AF00311269 /* LaunchScreen.storyboard in Resources */,
 				B17BBF381D1415AF00311269 /* Assets.xcassets in Resources */,
 				B17BBF361D1415AF00311269 /* Main.storyboard in Resources */,

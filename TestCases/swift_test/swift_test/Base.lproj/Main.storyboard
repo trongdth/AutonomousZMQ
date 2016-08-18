@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -23,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="zbT-4d-RFA"/>
                                 </constraints>
-                                <state key="normal" title="Scan product"/>
+                                <state key="normal" title="Send local message"/>
                                 <connections>
                                     <action selector="btnScanTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YXF-jt-LmV"/>
                                 </connections>
@@ -33,7 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IAg-fx-194"/>
                                 </constraints>
-                                <state key="normal" title="Send action"/>
+                                <state key="normal" title="Send internet message"/>
                                 <connections>
                                     <action selector="btnSendActionTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Nb-2Q-Lp4"/>
                                 </connections>

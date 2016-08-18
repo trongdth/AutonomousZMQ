@@ -8,7 +8,6 @@
 
 #import "ZMQObjC.h"
 #import "ZMQHelper.h"
-#import "ZmqChannel.h"
 
 typedef void(^MayaSuccess)(id object);
 typedef void(^MayaError)(NSError *err);
@@ -23,12 +22,35 @@ typedef void(^MayaError)(NSError *err);
 
 #pragma mark - Functions
 
-- (void)removeKey:(NSString *)key;
+/*
+ * Subcribe channel based on 2 keys: 'SERVER_IP' + 'SERVER_PORT'
+ * Notes: 
+ *   + We are using ZMQ publish/subcribe method
+ **/
 - (void)startReceiveData;
+
+/*
+ * Get current wifi name which connected from iPhone
+ **/
 - (NSString *)myCurrentWifi;
+
+/*
+ * We need close all sockets when application terminate or in background
+ **/
 - (void)closeSockets;
-- (void)setupProduct:(NSDictionary *)dictProduct onSuccess:(MayaSuccess)loadBlock;
-- (void)send:(NSDictionary *)dictParams onSuccess:(MayaSuccess)loadBlock;
+
+/*
+ * Send message in local network.
+ * Notes:
+ *   + We are using ZMQ request/reply method
+ **/
+- (void)sendLocalData:(NSString *)str onSuccess:(MayaSuccess)loadBlock;
+
+/*
+ * Remove callback based on 'action' key
+ *
+ **/
+- (void)removeKey:(NSString *)key;
 - (void)removeAll;
 
 @end

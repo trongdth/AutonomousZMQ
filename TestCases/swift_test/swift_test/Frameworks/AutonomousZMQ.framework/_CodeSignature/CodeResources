@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/ZMQController.h</key>
 		<data>
-		rxGQi87DhDd2tPUPSoOpJoEpTFI=
+		cVQDiUsn5Nohfrc+kIIN+xfgnXE=
 		</data>
 		<key>Headers/ZMQException.h</key>
 		<data>
@@ -39,10 +39,6 @@
 		<key>Headers/ZMQSocket.h</key>
 		<data>
 		e0IAv+Mr93aBDwNYT0AzZ+SsiYU=
-		</data>
-		<key>Headers/ZmqChannel.h</key>
-		<data>
-		B+f9Wm9wf7RkkdSadL5MHdmuzdU=
 		</data>
 		<key>Headers/getgateway.h</key>
 		<data>
@@ -66,7 +62,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VvmeA3sCB8XsAJFB5Y+QBHpyz8s=
+		MhMe36epKc+sxFgOaUzsPn3GEeY=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -127,11 +123,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rxGQi87DhDd2tPUPSoOpJoEpTFI=
+			cVQDiUsn5Nohfrc+kIIN+xfgnXE=
 			</data>
 			<key>hash2</key>
 			<data>
-			O6LkxHTnSVcDYzQY9CgzkcO7sg2OwDD2unrhAFYOIJE=
+			ckzyUVi1xIOFxRbE9U7fNnHxbBHgxCjwSYf99mWMpIE=
 			</data>
 		</dict>
 		<key>Headers/ZMQException.h</key>
@@ -176,17 +172,6 @@
 			<key>hash2</key>
 			<data>
 			T4W3Y4GcxtpPElQXwJRyUvcBcnRrNnr9ap2H1xa/Ofs=
-			</data>
-		</dict>
-		<key>Headers/ZmqChannel.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			B+f9Wm9wf7RkkdSadL5MHdmuzdU=
-			</data>
-			<key>hash2</key>
-			<data>
-			ocohjG0GBBFkV/C05xb20NwPgIpb0JEhl5tB0G5s/1k=
 			</data>
 		</dict>
 		<key>Headers/getgateway.h</key>
